@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Management & Department Control Center - Smart College Support</title>
+    <link rel="stylesheet" href="/static/style.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <!-- Header -->
+    <header class="header">
+        <div class="header-content">
+            <div>
+                <h1>🛡️ College Management & Department Control Center</h1>
+                <p>Real-Time Complaint Triage, Date & Time Analytics, Multi-Department Monitoring & Resolution Timelines</p>
+            </div>
+            <nav class="nav-links">
+                <a href="/" class="nav-btn">Student Portal</a>
+                <a href="/admin" class="nav-btn active">Management Dashboard</a>
+            </nav>
+        </div>
+    </header>
+
+    <main class="container admin-container">
+
+        <!-- Role View / Department Scope Toolbar -->
+        <div class="card view-scope-card">
+            <div class="scope-row">
+                <div class="scope-mode">
+                    <span class="scope-label">🔭 Active Perspective:</span>
+                    <div class="scope-toggle-buttons">
+                        <button class="scope-btn active" id="btnScopeMgmt" onclick="switchViewScope('management')">
+                            👑 Management (All Departments)
+                        </button>
+                        <button class="scope-btn" id="btnScopeDept" onclick="switchViewScope('department')">
+                            🏢 Department Staff View
+                        </button>
+                    </div>
+                </div>
+
+                <div class="dept-selector-wrapper" id="deptSelectorWrapper" style="display: none;">
+                    <label for="deptSelect">Target Department:</label>
+                    <select id="deptSelect" onchange="onDepartmentSelected(this.value)">
+                        <option value="all">🏢 All Departments</option>
+                        <option value="Network Department">Network Department</option>
+                        <option value="Maintenance Department">Maintenance Department</option>
+                        <option value="IT Support">IT Support</option>
+                        <option value="Academic Office">Academic Office</option>
+                        <option value="Accounts Department">Accounts Department</option>
+                        <option value="General Administration">General Administration</option>
+                    </select>
+                </div>
+
+                <div class="header-actions">
+                    <button class="action-btn secondary" onclick="loadDashboardData()">🔄 Refresh Data</button>
+                    <button class="action-btn warning" id="slaBtn" onclick="runSLACheck()">⚡ Run SLA Escalation Sweep</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Dynamic Management Statistics Ribbon -->
+        <div class="card">
+            <div class="card-header">
+                <h2>📊 Dynamic Management KPI Metrics</h2>
+                <span class="badge" id="statsLiveBadge">Live System Data</span>
+            </div>
+
+            <div class="stats">
+                <div class="stat-card today-card">
+                    <h3 id="todayCount">0</h3>
+                    <p>Received Today</p>
+                    <small id="todayDateLabel" class="text-muted">Today</small>
+                </div>
+
+                <div class="stat-card total-card">
+                    <h3 id="totalCount">0</h3>
+                    <p>Total Complaints</p>
+                </div>
+
+                <div class="stat-card pending-card">
+                    <h3 id="pendingCount">0</h3>
+                    <p>Active Pending</p>
+                </div>
+
+                <div class="stat-card resolved-card">
+                    <h3 id="resolvedCount">0</h3>
+                    <p>Resolved Complaints</p>
+                </div>
+
+                <div class="stat-card duration-card">
+                    <h3 id="avgDuration">0m</h3>
+                    <p>Avg Resolution Time</p>
+                </div>
+
+                <div class="stat-card incident-card">
+                    <h3 id="incidentCount">0</h3>
+                    <p>Incident Clusters</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Date-Wise, Time-Wise & Department-Wise Analytics Section -->
+        <div class="card analytics-overview-card">
+            <div class="card-header">
+                <h2>📈 In-Depth Date-Wise & Time-Wise Complaint Analytics</h2>
+                <div class="tab-pills">
+                    <button class="pill-btn active" id="pillDateBtn" onclick="switchAnalyticsTab('date')">📅 Date-Wise</button>
+                    <button class="pill-btn" id="pillDeptBtn" onclick="switchAnalyticsTab('dept')">🏢 Department-Wise</button>
+                    <button class="pill-btn" id="pillTimeBtn" onclick="switchAnalyticsTab('time')">⏰ Time-Wise</button>
+                </div>
+            </div>
+
+            <!-- Date-Wise Content -->
+            <div id="analyticsDateTab" class="analytics-tab-pane active">
+                <div class="table-responsive">
+                    <table class="analytics-table">
+                        <thead>
+                            <tr>
+                                <th>Date (YYYY-MM-DD)</th>
+                                <th>Complaints Received</th>
+                                <th>Complaints Resolved</th>
+                                <th>Pending / In Progress</th>
+                                <th>Resolution Ratio</th>
+                            </tr>
+                        </thead>
+                        <tbody id="dateWiseTableBody">
+                            <tr><td colspan="5" class="text-center text-muted">Calculating date-wise statistics...</td></tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+            <!-- Department-Wise Content -->
+            <div id="analyticsDeptTab" class="analytics-tab-pane" style="display: none;">
+                <div id="deptWiseCardsContainer" class="dept-analytics-grid">
+                    <p class="text-muted text-center">Loading department breakdown...</p>
+                </div>
+            </div>
+
+            <!-- Time-Wise Content -->
+            <div id="analyticsTimeTab" class="analytics-tab-pane" style="display: none;">
+                <div class="time-analytics-grid">
+                    <div class="time-periods-panel">
+                        <h4>Period of Day Distribution</h4>
+                        <div id="timePeriodsList" class="periods-list"></div>
+                    </div>
+                    <div class="time-hourly-panel">
+                        <h4>Hourly Complaint Arrival Heatmap</h4>
+                        <div id="timeHourlyList" class="hourly-bars-grid"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Filter & Search Toolbar -->
+        <div class="card filter-card">
+            <div class="filter-row">
+                <div class="search-box">
+                    <input type="text" id="searchInput" placeholder="🔍 Search by Ticket ID, student name, location, or keyword..." oninput="handleSearch()">
+                </div>
+                <div class="filter-group">
+                    <select id="statusFilter" onchange="loadDashboardData()">
+                        <option value="all">All Statuses</option>
+                        <option value="Submitted">Submitted</option>
+                        <option value="Seen">Seen</option>
+                        <option value="Assigned">Assigned</option>
+                        <option value="Action Started">Action Started</option>
+                        <option value="In Progress">In Progress</option>
+                        <option value="Resolved">Resolved</option>
+                        <option value="Escalated">Escalated</option>
+                    </select>
+
+                    <select id="priorityFilter" onchange="loadDashboardData()">
+                        <option value="all">All Priorities</option>
+                        <option value="Critical">Critical</option>
+                        <option value="High">High</option>
+                        <option value="Medium">Medium</option>
+                        <option value="Low">Low</option>
+                    </select>
+                </div>
+            </div>
+        </div>
+
+        <!-- Complaints Table with Photo & Timeline -->
+        <div class="card">
+            <div class="card-header">
+                <h2>📋 Monitored Complaints List</h2>
+                <span id="complaintCountBadge" class="badge">0 Tickets</span>
+            </div>
+
+            <div class="table-container">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Ticket ID & Date</th>
+                            <th>Student & Location</th>
+                            <th>Complaint Details</th>
+                            <th>Photo</th>
+                            <th>Department & Staff</th>
+                            <th>Priority</th>
+                            <th>Status & Lifecycle</th>
+                            <th>Actions</th>
+                        </tr>
+                    </thead>
+                    <tbody id="complaintTableBody">
+                        <tr>
+                            <td colspan="8" class="text-center">Loading complaints...</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+        <!-- Incident Clusters & Notifications Split Grid -->
+        <div class="split-grid">
+            <!-- Incident Clusters -->
+            <div class="card">
+                <div class="card-header">
+                    <h2>🔗 Clustered Incident Groups</h2>
+                </div>
+                <div id="incidentsContainer" class="incidents-container">
+                    <p class="text-muted">Loading incidents...</p>
+                </div>
+            </div>
+
+            <!-- System Notifications / Activity Feed -->
+            <div class="card">
+                <div class="card-header">
+                    <h2>🤖 Live Agent Activity Feed</h2>
+                </div>
+                <div id="activityFeed" class="activity-feed">
+                    <p class="text-muted">Loading agent audit stream...</p>
+                </div>
+            </div>
+        </div>
+
+    </main>
+
+    <!-- Modal for Detailed 5-Stage Timeline View -->
+    <div id="timelineModal" class="modal-overlay" onclick="closeTimelineModal()" style="display: none;">
+        <div class="modal-content timeline-modal-content" onclick="event.stopPropagation()">
+            <span class="modal-close" onclick="closeTimelineModal()">&times;</span>
+            <div id="timelineModalBody"></div>
+        </div>
+    </div>
+
+    <!-- Modal for Photo Zoom -->
+    <div id="imageModal" class="modal-overlay" onclick="closeImageModal()" style="display: none;">
+        <div class="modal-content" onclick="event.stopPropagation()">
+            <span class="modal-close" onclick="closeImageModal()">&times;</span>
+            <img id="modalImg" src="" alt="Full Complaint Photo">
+        </div>
+    </div>
+
+    <footer class="footer">
+        <p>Smart College Complaint Resolution Agent &bull; Management & Department Dashboard &bull; VCET 2026</p>
+    </footer>
+
+    <script src="/static/admin.js"></script>
+    <script src="admin.js"></script>
+</body>
+
+</html>

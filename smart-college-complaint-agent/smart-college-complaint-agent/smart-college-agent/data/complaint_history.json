@@ -1,0 +1,18 @@
+[
+    {
+        "id": "OLD001",
+        "location": "CSE Lab 2",
+        "category": "Network",
+        "issue": "WiFi not working",
+        "resolution": "Router restarted",
+        "resolved_in": "30 minutes"
+    },
+    {
+        "id": "OLD002",
+        "location": "Block B Room 204",
+        "category": "Maintenance",
+        "issue": "Fan not working",
+        "resolution": "Fan replaced",
+        "resolved_in": "2 hours"
+    }
+]

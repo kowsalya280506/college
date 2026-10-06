@@ -1,0 +1,32 @@
+[
+    {
+        "id": "CMP001",
+        "student": "Kavi",
+        "location": "CSE Lab 2",
+        "complaint": "WiFi is not working",
+        "category": "Network",
+        "priority": "Critical",
+        "department": "Network Department",
+        "status": "Escalated"
+    },
+    {
+        "id": "CMP002",
+        "student": "Priya",
+        "location": "Block B Room 204",
+        "complaint": "Fan is not working",
+        "category": "Maintenance",
+        "priority": "Medium",
+        "department": "Maintenance Department",
+        "status": "Pending"
+    },
+    {
+        "id": "CMP003",
+        "student": "Arun",
+        "location": "ECE Seminar Hall",
+        "complaint": "Projector is not working",
+        "category": "IT",
+        "priority": "High",
+        "department": "IT Support",
+        "status": "Assigned"
+    }
+]

@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Smart College Support - Student Portal</title>
+    <link rel="stylesheet" href="/static/style.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <header class="header">
+        <div class="header-content">
+            <div>
+                <h1>🎓 Smart College Support</h1>
+                <p>Autonomous AI-Powered Student Complaint & Grievance Resolution Agent</p>
+            </div>
+            <div class="header-right">
+                <div id="studentAuthBar" class="auth-bar">
+                    <!-- Populated dynamically via script.js -->
+                </div>
+                <nav class="nav-links">
+                    <a href="/" class="nav-btn active">Student Portal</a>
+                    <a href="/admin" class="nav-btn">Admin Dashboard</a>
+                </nav>
+            </div>
+        </div>
+    </header>
+
+    <main class="container">
+
+        <!-- Navigation Tabs -->
+        <div class="portal-tabs">
+            <button class="tab-btn active" id="tabSubmitBtn" onclick="switchPortalTab('submit')">
+                📝 Submit Grievance
+            </button>
+            <button class="tab-btn" id="tabTrackBtn" onclick="switchPortalTab('track')">
+                🔍 Track My Complaints <span id="myTicketBadge" class="tab-counter">0</span>
+            </button>
+        </div>
+
+        <!-- TAB 1: SUBMIT COMPLAINT -->
+        <section id="sectionSubmit" class="portal-section active">
+            <div class="card">
+                <div class="card-header">
+                    <h2>📝 Submit a Grievance / Complaint</h2>
+                    <span class="badge-ai">🤖 AI Agent Ready</span>
+                </div>
+
+                <form id="complaintForm" onsubmit="return false;">
+                    <div class="form-row">
+                        <div class="form-group flex-1">
+                            <label for="studentName">Student Name / Roll Number *</label>
+                            <input type="text" id="studentName" placeholder="e.g. VCET26" required>
+                        </div>
+
+                        <div class="form-group flex-1">
+                            <label for="location">Location / Classroom / Lab *</label>
+                            <input type="text" id="location" placeholder="e.g. CSE Lab 2, Hostel Block B" required>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="category">Category (Optional - AI Classification will auto-detect)</label>
+                        <select id="category">
+                            <option value="">🤖 Auto-Detect with AI Agent</option>
+                            <option value="Network">Network / WiFi</option>
+                            <option value="Maintenance">Maintenance & Electrical / Plumbing</option>
+                            <option value="IT">IT Support & Computers</option>
+                            <option value="Academic">Academic Office & Examinations</option>
+                            <option value="Accounts">Accounts & Fees</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="complaint">Describe Your Issue in Detail *</label>
+                        <textarea id="complaint" rows="4" placeholder="Describe the issue in detail... (e.g. Wi-Fi router is offline in CSE Lab 2, students unable to complete online test)" required></textarea>
+                    </div>
+
+                    <!-- Optional Photo Upload Section -->
+                    <div class="form-group photo-upload-group">
+                        <label for="complaintPhoto">
+                            📷 Attach Photo Proof <span class="text-optional">(Optional — You can submit without a photo)</span>
+                        </label>
+                        <div class="photo-dropzone" id="photoDropzone" onclick="document.getElementById('complaintPhoto').click()">
+                            <input type="file" id="complaintPhoto" accept="image/*" style="display: none;" onchange="handlePhotoSelect(this)">
+                            <div id="dropzonePrompt" class="dropzone-prompt">
+                                <span class="dropzone-icon">📁</span>
+                                <p><strong>Click to browse photo</strong> or drag & drop image here</p>
+                                <small class="text-muted">Supports JPG, PNG, WEBP &bull; Max 5MB &bull; 100% Optional</small>
+                            </div>
+                            <div id="photoPreviewContainer" class="photo-preview-box" style="display: none;">
+                                <img id="photoPreviewImg" src="" alt="Complaint Photo Preview" class="photo-preview-thumb">
+                                <div class="photo-preview-details">
+                                    <span id="photoPreviewName" class="file-name">-</span>
+                                    <button type="button" class="btn-remove-photo" onclick="removeSelectedPhoto(event)">✕ Remove Photo</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="form-actions">
+                        <button type="button" class="submit-btn" id="submitBtn">
+                            <span id="btnText">⚡ Process with AI Agent</span>
+                            <span id="btnSpinner" class="spinner" style="display: none;"></span>
+                        </button>
+                        <button type="button" class="preset-btn" onclick="fillExample()">💡 Load Example Urgency</button>
+                    </div>
+                </form>
+
+                <!-- Agent Result Card -->
+                <div class="result-box" id="resultBox" style="display: none;">
+                    <div class="result-header">
+                        <h3>✅ Ticket Processed & Routed Successfully</h3>
+                        <span id="ticketBadge" class="badge"></span>
+                    </div>
+
+                    <div class="ticket-grid">
+                        <div class="ticket-item">
+                            <span class="label">Ticket ID:</span>
+                            <strong id="resTicketId">-</strong>
+                        </div>
+                        <div class="ticket-item">
+                            <span class="label">Routed Department:</span>
+                            <strong id="resDepartment">-</strong>
+                        </div>
+                        <div class="ticket-item">
+                            <span class="label">Assigned Staff:</span>
+                            <strong id="resStaff">-</strong>
+                        </div>
+                        <div class="ticket-item">
+                            <span class="label">Priority:</span>
+                            <span id="resPriority" class="priority-tag">-</span>
+                        </div>
+                        <div class="ticket-item">
+                            <span class="label">Current Status:</span>
+                            <span id="resStatus" class="status-tag">-</span>
+                        </div>
+                        <div class="ticket-item">
+                            <span class="label">Incident Cluster:</span>
+                            <strong id="resIncident">-</strong>
+                        </div>
+                    </div>
+
+                    <!-- Submitted Photo Preview in Result -->
+                    <div id="resPhotoBox" class="result-photo-box" style="display: none;">
+                        <span class="label">Attached Photo:</span>
+                        <div class="photo-attachment-view">
+                            <img id="resPhotoImg" src="" alt="Attached Complaint Photo" onclick="openImageModal(this.src)">
+                            <small class="text-muted">(Click to enlarge image)</small>
+                        </div>
+                    </div>
+
+                    <div class="ai-summary">
+                        <strong>🤖 Agent Resolution Message:</strong>
+                        <p id="resAgentMessage">-</p>
+                    </div>
+
+                    <!-- Agent Execution Trace -->
+                    <div class="trace-section">
+                        <h4>🔍 AI Agent Step-by-Step Reasoning Trace</h4>
+                        <div class="timeline" id="agentTimeline">
+                            <!-- Dynamic timeline steps will be injected here -->
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Student Notifications Panel -->
+                <div class="student-notifs" id="studentNotifs" style="display: none;">
+                    <h3>🔔 Real-time Notifications</h3>
+                    <div id="notifList" class="notif-list"></div>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- TAB 2: TRACK MY COMPLAINTS -->
+        <section id="sectionTrack" class="portal-section" style="display: none;">
+            <div class="card">
+                <div class="card-header">
+                    <div>
+                        <h2>🔍 My Submitted Complaints & Live Tracking</h2>
+                        <p class="text-muted">Real-time status updates and complete 5-stage resolution timeline</p>
+                    </div>
+                    <button class="action-btn secondary" onclick="loadMyComplaints()">🔄 Refresh Tickets</button>
+                </div>
+
+                <!-- My Complaints List Container -->
+                <div id="myComplaintsList" class="my-complaints-list">
+                    <p class="text-center text-muted">Loading your submitted complaints...</p>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Modal for Photo Zoom -->
+    <div id="imageModal" class="modal-overlay" onclick="closeImageModal()" style="display: none;">
+        <div class="modal-content" onclick="event.stopPropagation()">
+            <span class="modal-close" onclick="closeImageModal()">&times;</span>
+            <img id="modalImg" src="" alt="Full Complaint Photo">
+        </div>
+    </div>
+
+    <footer class="footer">
+        <p>Smart College Complaint Resolution Agent &bull; Powered by Agentic AI &bull; VCET 2026</p>
+    </footer>
+
+    <script src="/static/script.js"></script>
+    <script src="script.js"></script>
+</body>
+
+</html>

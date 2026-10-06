@@ -1,0 +1,394 @@
+[
+    {
+        "id": "NOTIF-001",
+        "student_id": "Kavi",
+        "message": "Your complaint CMP001 has been escalated to Network Department (Critical).",
+        "created_at": "2026-08-21T10:05:00",
+        "read": false
+    },
+    {
+        "id": "NOTIF-002",
+        "student_id": "StudentTest",
+        "message": "Test notification message",
+        "created_at": "2026-08-21T14:59:18.012702",
+        "read": true
+    },
+    {
+        "id": "NOTIF-003",
+        "student_id": "Rohan",
+        "message": "Complaint CMP002 received. AI classified as [Medium] priority and assigned to Maintenance Department.",
+        "created_at": "2026-08-21T15:04:59.579273",
+        "read": false
+    },
+    {
+        "id": "NOTIF-004",
+        "student_id": "Aakash",
+        "message": "Complaint CMP003 received. AI classified as [Medium] priority and assigned to Maintenance Department.",
+        "created_at": "2026-08-21T15:05:01.418157",
+        "read": false
+    },
+    {
+        "id": "NOTIF-005",
+        "student_id": "StudentTest",
+        "message": "Test notification message",
+        "created_at": "2026-08-21T15:05:01.652671",
+        "read": true
+    },
+    {
+        "id": "NOTIF-006",
+        "student_id": "Rohan",
+        "message": "Complaint CMP005 received. AI classified as [Medium] priority and assigned to Maintenance Department.",
+        "created_at": "2026-08-21T15:06:09.744001",
+        "read": false
+    },
+    {
+        "id": "NOTIF-007",
+        "student_id": "Aakash",
+        "message": "Complaint CMP006 received. AI classified as [Medium] priority and assigned to Maintenance Department.",
+        "created_at": "2026-08-21T15:06:11.146783",
+        "read": false
+    },
+    {
+        "id": "NOTIF-008",
+        "student_id": "StudentTest",
+        "message": "Test notification message",
+        "created_at": "2026-08-21T15:06:11.836164",
+        "read": true
+    },
+    {
+        "id": "NOTIF-009",
+        "student_id": "Rohan",
+        "message": "Complaint CMP008 received. AI classified as [Medium] priority and assigned to Maintenance Department.",
+        "created_at": "2026-08-21T15:07:26.159591",
+        "read": false
+    },
+    {
+        "id": "NOTIF-010",
+        "student_id": "Aakash",
+        "message": "Complaint CMP009 received. AI classified as [Medium] priority and assigned to Maintenance Department.",
+        "created_at": "2026-08-21T15:07:27.730688",
+        "read": false
+    },
+    {
+        "id": "NOTIF-011",
+        "student_id": "StudentTest",
+        "message": "Test notification message",
+        "created_at": "2026-08-21T15:07:28.312445",
+        "read": true
+    },
+    {
+        "id": "NOTIF-012",
+        "student_id": "Rohan",
+        "message": "Complaint CMP011 received. AI classified as [Medium] priority and assigned to Maintenance Department.",
+        "created_at": "2026-08-21T15:10:50.029237",
+        "read": false
+    },
+    {
+        "id": "NOTIF-013",
+        "student_id": "Rohan",
+        "message": "Complaint CMP012 received. AI classified as [Medium] priority and assigned to Maintenance Department.",
+        "created_at": "2026-08-21T15:16:15.323715",
+        "read": false
+    },
+    {
+        "id": "NOTIF-014",
+        "student_id": "Aakash",
+        "message": "Complaint CMP013 received. AI classified as [Medium] priority and assigned to Maintenance Department.",
+        "created_at": "2026-08-21T15:16:15.677535",
+        "read": false
+    },
+    {
+        "id": "NOTIF-015",
+        "student_id": "StudentTest",
+        "message": "Test notification message",
+        "created_at": "2026-08-21T15:16:15.797054",
+        "read": true
+    },
+    {
+        "id": "NOTIF-016",
+        "student_id": "Aakash",
+        "message": "Complaint CMP013 has been marked RESOLVED. Notes: Resolved",
+        "created_at": "2026-08-21T15:23:08.188580",
+        "read": false
+    },
+    {
+        "id": "NOTIF-017",
+        "student_id": "Rohan",
+        "message": "Complaint CMP015 received. AI classified as [Medium] priority and assigned to Maintenance Department.",
+        "created_at": "2026-09-23T20:41:46.300837",
+        "read": false
+    },
+    {
+        "id": "NOTIF-018",
+        "student_id": "Aakash",
+        "message": "Complaint CMP016 received. AI classified as [Medium] priority and assigned to Maintenance Department.",
+        "created_at": "2026-09-23T20:41:46.432666",
+        "read": false
+    },
+    {
+        "id": "NOTIF-019",
+        "student_id": "StudentTest",
+        "message": "Test notification message",
+        "created_at": "2026-09-23T20:41:46.483620",
+        "read": true
+    },
+    {
+        "id": "NOTIF-020",
+        "student_id": "Rohan",
+        "message": "Complaint CMP018 received. AI classified as [Medium] priority and assigned to Maintenance Department.",
+        "created_at": "2026-09-23T20:51:52.561718",
+        "read": false
+    },
+    {
+        "id": "NOTIF-021",
+        "student_id": "StudentTest",
+        "message": "Test notification message",
+        "created_at": "2026-09-23T20:51:52.632815",
+        "read": true
+    },
+    {
+        "id": "NOTIF-022",
+        "student_id": "Rohan",
+        "message": "Complaint CMP020 received. AI classified as [Medium] priority and assigned to Maintenance Department.",
+        "created_at": "2026-09-23T20:53:21.402956",
+        "read": false
+    },
+    {
+        "id": "NOTIF-023",
+        "student_id": "Aakash",
+        "message": "Complaint CMP021 received. AI classified as [Medium] priority and assigned to Maintenance Department.",
+        "created_at": "2026-09-23T20:53:21.494004",
+        "read": false
+    },
+    {
+        "id": "NOTIF-024",
+        "student_id": "StudentTest",
+        "message": "Test notification message",
+        "created_at": "2026-09-23T20:53:21.553435",
+        "read": true
+    },
+    {
+        "id": "NOTIF-025",
+        "student_id": "Rohan",
+        "message": "Complaint CMP023 received. AI classified as [Medium] priority and assigned to Maintenance Department.",
+        "created_at": "2026-09-23T20:53:51.895611",
+        "read": false
+    },
+    {
+        "id": "NOTIF-026",
+        "student_id": "Aakash",
+        "message": "Complaint CMP024 received. AI classified as [Medium] priority and assigned to Maintenance Department.",
+        "created_at": "2026-09-23T20:53:52.023917",
+        "read": false
+    },
+    {
+        "id": "NOTIF-027",
+        "student_id": "VCET26",
+        "message": "Complaint CMP025 received. AI classified as [Medium] priority and assigned to Maintenance Department.",
+        "created_at": "2026-09-23T20:53:52.165578",
+        "read": false
+    },
+    {
+        "id": "NOTIF-028",
+        "student_id": "VCET26",
+        "message": "Complaint CMP026 received. AI classified as [Low] priority and assigned to Maintenance Department.",
+        "created_at": "2026-09-23T20:53:52.242229",
+        "read": false
+    },
+    {
+        "id": "NOTIF-029",
+        "student_id": "VCET26",
+        "message": "Complaint CMP_TEST_1790177032 has been marked RESOLVED. Notes: Galvanometer recalibrated and tested",
+        "created_at": "2026-09-23T20:53:52.415651",
+        "read": false
+    },
+    {
+        "id": "NOTIF-030",
+        "student_id": "StudentTest",
+        "message": "Test notification message",
+        "created_at": "2026-09-23T20:53:52.544811",
+        "read": true
+    },
+    {
+        "id": "NOTIF-031",
+        "student_id": "Rohan",
+        "message": "Complaint CMP029 received. AI classified as [Medium] priority and assigned to Maintenance Department.",
+        "created_at": "2026-09-23T20:57:12.591376",
+        "read": false
+    },
+    {
+        "id": "NOTIF-032",
+        "student_id": "Aakash",
+        "message": "Complaint CMP030 received. AI classified as [Medium] priority and assigned to Maintenance Department.",
+        "created_at": "2026-09-23T20:57:12.691762",
+        "read": false
+    },
+    {
+        "id": "NOTIF-033",
+        "student_id": "VCET26",
+        "message": "Complaint CMP031 received. AI classified as [Medium] priority and assigned to Maintenance Department.",
+        "created_at": "2026-09-23T20:57:12.773345",
+        "read": false
+    },
+    {
+        "id": "NOTIF-034",
+        "student_id": "VCET26",
+        "message": "Complaint CMP032 received. AI classified as [Low] priority and assigned to Maintenance Department.",
+        "created_at": "2026-09-23T20:57:12.835924",
+        "read": false
+    },
+    {
+        "id": "NOTIF-035",
+        "student_id": "VCET26",
+        "message": "Complaint CMP_TEST_1790177232 has been marked RESOLVED. Notes: Galvanometer recalibrated and tested",
+        "created_at": "2026-09-23T20:57:12.978708",
+        "read": false
+    },
+    {
+        "id": "NOTIF-036",
+        "student_id": "StudentTest",
+        "message": "Test notification message",
+        "created_at": "2026-09-23T20:57:13.086363",
+        "read": true
+    },
+    {
+        "id": "NOTIF-037",
+        "student_id": "VCET26",
+        "message": "Complaint CMP035 received. AI classified as [Low] priority and assigned to Maintenance Department.",
+        "created_at": "2026-09-23T20:59:00.617069",
+        "read": false
+    },
+    {
+        "id": "NOTIF-038",
+        "student_id": "VCET26",
+        "message": "Complaint CMP035 has been marked RESOLVED. Notes: Power cord replaced",
+        "created_at": "2026-09-23T20:59:00.769227",
+        "read": false
+    },
+    {
+        "id": "NOTIF-039",
+        "student_id": "Rohan",
+        "message": "Complaint CMP036 received. AI classified as [Medium] priority and assigned to Maintenance Department.",
+        "created_at": "2026-09-23T21:02:40.648314",
+        "read": false
+    },
+    {
+        "id": "NOTIF-040",
+        "student_id": "Aakash",
+        "message": "Complaint CMP037 received. AI classified as [Medium] priority and assigned to Maintenance Department.",
+        "created_at": "2026-09-23T21:02:40.826889",
+        "read": false
+    },
+    {
+        "id": "NOTIF-041",
+        "student_id": "VCET26",
+        "message": "Complaint CMP038 received. AI classified as [Medium] priority and assigned to Maintenance Department.",
+        "created_at": "2026-09-23T21:02:40.974759",
+        "read": false
+    },
+    {
+        "id": "NOTIF-042",
+        "student_id": "VCET26",
+        "message": "Complaint CMP039 received. AI classified as [Low] priority and assigned to Maintenance Department.",
+        "created_at": "2026-09-23T21:02:41.056804",
+        "read": false
+    },
+    {
+        "id": "NOTIF-043",
+        "student_id": "VCET26",
+        "message": "Complaint CMP_TEST_1790177561 has been marked RESOLVED. Notes: Galvanometer recalibrated and tested",
+        "created_at": "2026-09-23T21:02:41.205417",
+        "read": false
+    },
+    {
+        "id": "NOTIF-044",
+        "student_id": "StudentTest",
+        "message": "Test notification message",
+        "created_at": "2026-09-23T21:02:41.343793",
+        "read": true
+    },
+    {
+        "id": "NOTIF-045",
+        "student_id": "kowsi",
+        "message": "Complaint CMP042 received. AI classified as [Critical] priority and assigned to Academic Office.",
+        "created_at": "2026-09-23T21:07:21.361649",
+        "read": false
+    },
+    {
+        "id": "NOTIF-046",
+        "student_id": "Rohan",
+        "message": "Complaint CMP002 has been escalated to Critical status. Reason: Automatic SLA Escalation: Pending for > 24h",
+        "created_at": "2026-09-23T21:10:48.830504",
+        "read": false
+    },
+    {
+        "id": "NOTIF-047",
+        "student_id": "Aakash",
+        "message": "Complaint CMP003 has been escalated to Critical status. Reason: Automatic SLA Escalation: Pending for > 24h",
+        "created_at": "2026-09-23T21:10:48.896587",
+        "read": false
+    },
+    {
+        "id": "NOTIF-048",
+        "student_id": "Rohan",
+        "message": "Complaint CMP005 has been escalated to Critical status. Reason: Automatic SLA Escalation: Pending for > 24h",
+        "created_at": "2026-09-23T21:10:48.964558",
+        "read": false
+    },
+    {
+        "id": "NOTIF-049",
+        "student_id": "Aakash",
+        "message": "Complaint CMP006 has been escalated to Critical status. Reason: Automatic SLA Escalation: Pending for > 24h",
+        "created_at": "2026-09-23T21:10:49.018749",
+        "read": false
+    },
+    {
+        "id": "NOTIF-050",
+        "student_id": "Rohan",
+        "message": "Complaint CMP008 has been escalated to Critical status. Reason: Automatic SLA Escalation: Pending for > 24h",
+        "created_at": "2026-09-23T21:10:49.075363",
+        "read": false
+    },
+    {
+        "id": "NOTIF-051",
+        "student_id": "Aakash",
+        "message": "Complaint CMP009 has been escalated to Critical status. Reason: Automatic SLA Escalation: Pending for > 24h",
+        "created_at": "2026-09-23T21:10:49.133334",
+        "read": false
+    },
+    {
+        "id": "NOTIF-052",
+        "student_id": "Rohan",
+        "message": "Complaint CMP011 has been escalated to Critical status. Reason: Automatic SLA Escalation: Pending for > 24h",
+        "created_at": "2026-09-23T21:10:49.194288",
+        "read": false
+    },
+    {
+        "id": "NOTIF-053",
+        "student_id": "Rohan",
+        "message": "Complaint CMP012 has been escalated to Critical status. Reason: Automatic SLA Escalation: Pending for > 24h",
+        "created_at": "2026-09-23T21:10:49.246062",
+        "read": false
+    },
+    {
+        "id": "NOTIF-054",
+        "student_id": "yuva",
+        "message": "Complaint CMP043 received. AI classified as [Medium] priority and assigned to Maintenance Department.",
+        "created_at": "2026-09-23T21:32:43.127458",
+        "read": false
+    },
+    {
+        "id": "NOTIF-055",
+        "student_id": "yuva",
+        "message": "Complaint CMP043 has been marked RESOLVED. Notes: Grievance resolved and verified by department team.",
+        "created_at": "2026-09-23T21:45:43.240561",
+        "read": false
+    },
+    {
+        "id": "NOTIF-056",
+        "student_id": "kowsi",
+        "message": "Complaint CMP042 has been marked RESOLVED. Notes: Grievance resolved and verified by department team.",
+        "created_at": "2026-09-23T21:45:56.263020",
+        "read": false
+    }
+]

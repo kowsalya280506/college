@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Login - Smart College Support</title>
+    <link rel="stylesheet" href="/static/style.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body class="login-body">
+
+    <header class="header">
+        <div class="header-content">
+            <div>
+                <h1>🎓 Smart College Support</h1>
+                <p>Velalar College of Engineering and Technology - Autonomous Complaint Agent</p>
+            </div>
+            <nav class="nav-links">
+                <a href="/login" class="nav-btn active">Student Login</a>
+                <a href="/admin" class="nav-btn">Admin / Management</a>
+            </nav>
+        </div>
+    </header>
+
+    <main class="container login-container">
+        <div class="card login-card">
+            <div class="card-header text-center">
+                <div class="login-avatar">👨‍🎓</div>
+                <h2>Student Portal Login</h2>
+                <p class="text-muted">Enter your VCET student credentials to submit and track grievances</p>
+            </div>
+
+            <form id="studentLoginForm" onsubmit="return false;">
+                <div class="form-group">
+                    <label for="username">Username / Roll Number *</label>
+                    <input type="text" id="username" placeholder="e.g. VCET26" required autocomplete="username">
+                </div>
+
+                <div class="form-group">
+                    <label for="password">Password *</label>
+                    <input type="password" id="password" placeholder="Enter password" required autocomplete="current-password">
+                </div>
+
+                <div class="login-hint">
+                    <span class="hint-badge">Demo Credentials</span>
+                    <span>Username: <strong>VCET26</strong> &bull; Password: <strong>velalar</strong></span>
+                </div>
+
+                <div class="form-actions login-actions">
+                    <button type="button" class="submit-btn full-width" id="loginBtn" onclick="handleStudentLogin()">
+                        <span id="loginBtnText">🔐 Login to Student Portal</span>
+                        <span id="loginSpinner" class="spinner" style="display: none;"></span>
+                    </button>
+                    <button type="button" class="preset-btn full-width" onclick="fillStudentDemo()">
+                        ⚡ Auto-Fill VCET26 Credentials
+                    </button>
+                </div>
+
+                <div id="loginError" class="alert-box error" style="display: none;"></div>
+            </form>
+        </div>
+    </main>
+
+    <footer class="footer">
+        <p>Smart College Complaint Resolution Agent &bull; Student Gateway &bull; VCET 2026</p>
+    </footer>
+
+    <script>
+        function fillStudentDemo() {
+            document.getElementById("username").value = "VCET26";
+            document.getElementById("password").value = "velalar";
+        }
+
+        async function handleStudentLogin() {
+            const uname = document.getElementById("username").value.trim();
+            const pwd = document.getElementById("password").value.trim();
+            const errBox = document.getElementById("loginError");
+            const btn = document.getElementById("loginBtn");
+            const btnText = document.getElementById("loginBtnText");
+            const spinner = document.getElementById("loginSpinner");
+
+            errBox.style.display = "none";
+
+            if (!uname || !pwd) {
+                errBox.textContent = "Please enter both username and password.";
+                errBox.style.display = "block";
+                return;
+            }
+
+            btn.disabled = true;
+            btnText.textContent = "Authenticating...";
+            spinner.style.display = "inline-block";
+
+            try {
+                const response = await fetch("/api/auth/student-login", {
+                    method: "POST",
+                    headers: { "Content-Type": "application/json" },
+                    body: JSON.stringify({ username: uname, password: pwd })
+                });
+
+                const data = await response.json();
+
+                if (!response.ok) {
+                    throw new Error(data.detail || "Authentication failed.");
+                }
+
+                // Save session in localStorage & sessionStorage
+                localStorage.setItem("vcet_student", JSON.stringify(data.student));
+                localStorage.setItem("vcet_token", data.token);
+
+                // Redirect to Student Portal
+                window.location.href = "/";
+            } catch (err) {
+                errBox.textContent = err.message;
+                errBox.style.display = "block";
+            } finally {
+                btn.disabled = false;
+                btnText.textContent = "🔐 Login to Student Portal";
+                spinner.style.display = "none";
+            }
+        }
+
+        // Allow pressing Enter key to submit
+        document.addEventListener("DOMContentLoaded", () => {
+            const form = document.getElementById("studentLoginForm");
+            form.addEventListener("keydown", (e) => {
+                if (e.key === "Enter") {
+                    handleStudentLogin();
+                }
+            });
+        });
+    </script>
+</body>
+
+</html>

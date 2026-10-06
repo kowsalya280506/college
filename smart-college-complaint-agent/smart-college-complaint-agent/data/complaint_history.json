@@ -1,0 +1,26 @@
+[
+    {
+        "id": "OLD001",
+        "location": "CSE Lab 2",
+        "category": "Network",
+        "issue": "WiFi not working / connection dropped",
+        "resolution": "Lab router reset and DHCP lease table cleared",
+        "resolved_in": "30 minutes"
+    },
+    {
+        "id": "OLD002",
+        "location": "Block B Room 204",
+        "category": "Maintenance",
+        "issue": "Classroom ceiling fan not working",
+        "resolution": "Capacitor replaced and speed regulator fixed",
+        "resolved_in": "2 hours"
+    },
+    {
+        "id": "OLD003",
+        "location": "ECE Seminar Hall",
+        "category": "IT",
+        "issue": "Projector HDMI signal not detected",
+        "resolution": "HDMI converter cable replaced and firmware rebooted",
+        "resolved_in": "45 minutes"
+    }
+]

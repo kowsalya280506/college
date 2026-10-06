@@ -1,0 +1,30 @@
+[
+    {
+        "id": "ST001",
+        "name": "Arun",
+        "department": "Network Department",
+        "role": "Network Administrator",
+        "available": true
+    },
+    {
+        "id": "ST002",
+        "name": "Priya",
+        "department": "Maintenance Department",
+        "role": "Maintenance Supervisor",
+        "available": true
+    },
+    {
+        "id": "ST003",
+        "name": "Rahul",
+        "department": "IT Support",
+        "role": "IT Technician",
+        "available": true
+    },
+    {
+        "id": "ST004",
+        "name": "Ravi",
+        "department": "Academic Office",
+        "role": "Academic Officer",
+        "available": true
+    }
+]

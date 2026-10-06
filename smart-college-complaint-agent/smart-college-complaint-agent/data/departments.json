@@ -1,0 +1,70 @@
+[
+    {
+        "department": "Network Department",
+        "handles": [
+            "WiFi",
+            "Internet",
+            "Network",
+            "LAN",
+            "Router",
+            "Ethernet"
+        ]
+    },
+    {
+        "department": "Maintenance Department",
+        "handles": [
+            "Fan",
+            "Light",
+            "Water",
+            "Electricity",
+            "Classroom",
+            "Plumbing",
+            "Leak",
+            "Switch",
+            "AC",
+            "Washroom"
+        ]
+    },
+    {
+        "department": "IT Support",
+        "handles": [
+            "Projector",
+            "Computer",
+            "Printer",
+            "Software",
+            "Lab PC",
+            "Monitor"
+        ]
+    },
+    {
+        "department": "Academic Office",
+        "handles": [
+            "Exam",
+            "Registration",
+            "Attendance",
+            "Marks",
+            "Hall Ticket",
+            "Timetable"
+        ]
+    },
+    {
+        "department": "Food & Hostel Department",
+        "handles": [
+            "Food",
+            "Mess",
+            "Canteen",
+            "Hostel Room",
+            "Cleanliness"
+        ]
+    },
+    {
+        "department": "Accounts Department",
+        "handles": [
+            "Fee",
+            "Payment",
+            "Scholarship",
+            "Challan",
+            "Dues"
+        ]
+    }
+]

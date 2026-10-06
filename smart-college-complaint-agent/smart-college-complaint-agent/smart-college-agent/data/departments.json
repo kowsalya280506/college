@@ -1,0 +1,39 @@
+[
+    {
+        "department": "Network Department",
+        "handles": [
+            "WiFi",
+            "Internet",
+            "Network",
+            "LAN"
+        ]
+    },
+    {
+        "department": "Maintenance Department",
+        "handles": [
+            "Fan",
+            "Light",
+            "Water",
+            "Electricity",
+            "Classroom"
+        ]
+    },
+    {
+        "department": "IT Support",
+        "handles": [
+            "Projector",
+            "Computer",
+            "Printer",
+            "Software"
+        ]
+    },
+    {
+        "department": "Academic Office",
+        "handles": [
+            "Exam",
+            "Registration",
+            "Attendance",
+            "Marks"
+        ]
+    }
+]

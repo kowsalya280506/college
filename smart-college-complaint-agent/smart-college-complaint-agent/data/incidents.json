@@ -1,0 +1,275 @@
+[
+    {
+        "incident_id": "INCIDENT-001",
+        "complaints": [
+            "CMP001"
+        ],
+        "affected_students": [
+            "STU001",
+            "Kavi"
+        ],
+        "category": "Network",
+        "status": "Open",
+        "created_at": "2026-08-21T10:00:00"
+    },
+    {
+        "incident_id": "INCIDENT-002",
+        "category": "Maintenance",
+        "complaints": [
+            "CMP002",
+            "CMP005",
+            "CMP008",
+            "CMP012",
+            "CMP015",
+            "CMP018",
+            "CMP020",
+            "CMP023",
+            "CMP029",
+            "CMP036"
+        ],
+        "affected_students": [
+            "Rohan"
+        ],
+        "status": "Open",
+        "created_at": "2026-08-21T15:04:59.430040",
+        "updated_at": "2026-09-23T21:02:40.632899"
+    },
+    {
+        "incident_id": "INCIDENT-003",
+        "category": "Maintenance",
+        "complaints": [
+            "CMP003",
+            "CMP006",
+            "CMP009",
+            "CMP013",
+            "CMP016",
+            "CMP021",
+            "CMP024",
+            "CMP026",
+            "CMP030",
+            "CMP032",
+            "CMP037",
+            "CMP039"
+        ],
+        "affected_students": [
+            "Aakash",
+            "VCET26"
+        ],
+        "status": "Open",
+        "created_at": "2026-08-21T15:05:01.359194",
+        "updated_at": "2026-09-23T21:02:41.039757"
+    },
+    {
+        "incident_id": "INCIDENT-004",
+        "category": "Network",
+        "complaints": [
+            "TEST_CMP1",
+            "TEST_CMP2"
+        ],
+        "affected_students": [
+            "Student1",
+            "Student2"
+        ],
+        "status": "Open",
+        "created_at": "2026-08-21T15:06:15.184071",
+        "updated_at": "2026-08-21T15:06:15.813199"
+    },
+    {
+        "incident_id": "INCIDENT-005",
+        "category": "Network",
+        "complaints": [
+            "TEST_CMP1",
+            "TEST_CMP2"
+        ],
+        "affected_students": [
+            "Student1",
+            "Student2"
+        ],
+        "status": "Open",
+        "created_at": "2026-08-21T15:07:31.147133",
+        "updated_at": "2026-08-21T15:07:31.275175"
+    },
+    {
+        "incident_id": "INCIDENT-006",
+        "category": "Network",
+        "complaints": [
+            "TEST_CMP1",
+            "TEST_CMP2"
+        ],
+        "affected_students": [
+            "Student1",
+            "Student2"
+        ],
+        "status": "Open",
+        "created_at": "2026-08-21T15:07:41.234088",
+        "updated_at": "2026-08-21T15:07:41.272495"
+    },
+    {
+        "incident_id": "INCIDENT-007",
+        "category": "Maintenance",
+        "complaints": [
+            "CMP011"
+        ],
+        "affected_students": [
+            "Rohan"
+        ],
+        "status": "Open",
+        "created_at": "2026-08-21T15:10:49.988513"
+    },
+    {
+        "incident_id": "INCIDENT-008",
+        "category": "Network",
+        "complaints": [
+            "TEST_CMP1",
+            "TEST_CMP2"
+        ],
+        "affected_students": [
+            "Student1",
+            "Student2"
+        ],
+        "status": "Open",
+        "created_at": "2026-08-21T15:16:15.924292",
+        "updated_at": "2026-08-21T15:16:16.106995"
+    },
+    {
+        "incident_id": "INCIDENT-009",
+        "category": "Network",
+        "complaints": [
+            "TEST_CMP1",
+            "TEST_CMP2"
+        ],
+        "affected_students": [
+            "Student1",
+            "Student2"
+        ],
+        "status": "Open",
+        "created_at": "2026-09-23T20:41:46.551221",
+        "updated_at": "2026-09-23T20:41:46.562970"
+    },
+    {
+        "incident_id": "INCIDENT-010",
+        "category": "Network",
+        "complaints": [
+            "TEST_CMP1",
+            "TEST_CMP2"
+        ],
+        "affected_students": [
+            "Student1",
+            "Student2"
+        ],
+        "status": "Open",
+        "created_at": "2026-09-23T20:51:52.692220",
+        "updated_at": "2026-09-23T20:51:52.740414"
+    },
+    {
+        "incident_id": "INCIDENT-011",
+        "category": "Network",
+        "complaints": [
+            "TEST_CMP1",
+            "TEST_CMP2"
+        ],
+        "affected_students": [
+            "Student1",
+            "Student2"
+        ],
+        "status": "Open",
+        "created_at": "2026-09-23T20:53:21.611464",
+        "updated_at": "2026-09-23T20:53:21.629500"
+    },
+    {
+        "incident_id": "INCIDENT-012",
+        "category": "Maintenance",
+        "complaints": [
+            "CMP025",
+            "CMP031",
+            "CMP038"
+        ],
+        "affected_students": [
+            "VCET26"
+        ],
+        "status": "Open",
+        "created_at": "2026-09-23T20:53:52.141981",
+        "updated_at": "2026-09-23T21:02:40.945446"
+    },
+    {
+        "incident_id": "INCIDENT-013",
+        "category": "Network",
+        "complaints": [
+            "TEST_CMP1",
+            "TEST_CMP2"
+        ],
+        "affected_students": [
+            "Student1",
+            "Student2"
+        ],
+        "status": "Open",
+        "created_at": "2026-09-23T20:53:52.594911",
+        "updated_at": "2026-09-23T20:53:52.608316"
+    },
+    {
+        "incident_id": "INCIDENT-014",
+        "category": "Network",
+        "complaints": [
+            "TEST_CMP1",
+            "TEST_CMP2"
+        ],
+        "affected_students": [
+            "Student1",
+            "Student2"
+        ],
+        "status": "Open",
+        "created_at": "2026-09-23T20:57:13.127396",
+        "updated_at": "2026-09-23T20:57:13.146303"
+    },
+    {
+        "incident_id": "INCIDENT-015",
+        "category": "Maintenance",
+        "complaints": [
+            "CMP035"
+        ],
+        "affected_students": [
+            "VCET26"
+        ],
+        "status": "Open",
+        "created_at": "2026-09-23T20:59:00.606036"
+    },
+    {
+        "incident_id": "INCIDENT-016",
+        "category": "Network",
+        "complaints": [
+            "TEST_CMP1",
+            "TEST_CMP2"
+        ],
+        "affected_students": [
+            "Student1",
+            "Student2"
+        ],
+        "status": "Open",
+        "created_at": "2026-09-23T21:02:41.391701",
+        "updated_at": "2026-09-23T21:02:41.410700"
+    },
+    {
+        "incident_id": "INCIDENT-017",
+        "category": "Academic Office",
+        "complaints": [
+            "CMP042"
+        ],
+        "affected_students": [
+            "kowsi"
+        ],
+        "status": "Open",
+        "created_at": "2026-09-23T21:07:21.330681"
+    },
+    {
+        "incident_id": "INCIDENT-018",
+        "category": "Maintenance",
+        "complaints": [
+            "CMP043"
+        ],
+        "affected_students": [
+            "yuva"
+        ],
+        "status": "Open",
+        "created_at": "2026-09-23T21:32:43.110718"
+    }
+]

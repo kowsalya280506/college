@@ -1,0 +1,50 @@
+[
+    {
+        "id": "ST001",
+        "name": "Arun Kumar",
+        "department": "Network Department",
+        "role": "Network Administrator",
+        "available": true,
+        "contact": "arun.net@college.edu"
+    },
+    {
+        "id": "ST002",
+        "name": "Priya Sundaram",
+        "department": "Maintenance Department",
+        "role": "Maintenance Supervisor",
+        "available": true,
+        "contact": "priya.maint@college.edu"
+    },
+    {
+        "id": "ST003",
+        "name": "Rahul Verma",
+        "department": "IT Support",
+        "role": "Senior Systems Technician",
+        "available": true,
+        "contact": "rahul.it@college.edu"
+    },
+    {
+        "id": "ST004",
+        "name": "Ravi Shankar",
+        "department": "Academic Office",
+        "role": "Academic Affairs Coordinator",
+        "available": true,
+        "contact": "ravi.acad@college.edu"
+    },
+    {
+        "id": "ST005",
+        "name": "Meena Devi",
+        "department": "Food & Hostel Department",
+        "role": "Hostel Warden & Mess In-charge",
+        "available": true,
+        "contact": "meena.hostel@college.edu"
+    },
+    {
+        "id": "ST006",
+        "name": "Suresh Nair",
+        "department": "Accounts Department",
+        "role": "Finance Officer",
+        "available": true,
+        "contact": "suresh.fin@college.edu"
+    }
+]
